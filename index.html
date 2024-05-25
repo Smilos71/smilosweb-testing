@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smilosweb.app</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+        header {
+            background-color: #2c82c9;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+        nav {
+            background-color: #57a3db;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+        }
+        nav a:hover {
+            text-decoration: underline;
+            font-size: 1.3em;
+        }
+        .hero {
+            background-image: url('https://img.freepik.com/free-vector/gradient-abstract-with-diagonal-lines-background_23-2150527316.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+        }
+        .hero h2 {
+            font-size: 3em;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .services {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+        .service {
+            width: calc(33.33% - 20px);
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        .service:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .service h3 {
+            margin-top: 0;
+            color: #2c82c9;
+        }
+        .service p {
+            color: #666;
+        }
+        .contact {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .contact p {
+            margin: 0;
+            font-size: 1.2em;
+            color: #333;
+        }
+        .contact a {
+            color: #2c82c9;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .contact a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            background-color: #2c82c9;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Smilosweb.app</h1>
+    </header>
+
+    <nav>
+        <a href="https://smilosweb.netlify.app/">Domů</a>
+        <a href="https://smilosweb.netlify.app/kontakt">Kontakt</a>
+        <a href="https://ofiko.eu">Ofiko.eu</a>
+        <a href="https://smilosweb.netlify.app/vytvorit.html">Vytvořit web zdarma </a>
+        <a href="https://smwb.netlify.app/seznamwebu/">Vytvořené weby </a>
+         <a href="https://discord.gg/XGvadnCpb6">Discord </a>
+         <a href="https://smilosweb.netlify.app/sablony">Šablony </a>
+
+    </nav>
+
+    <div class="hero">
+        <h2>Vaše webové stránky jednoduše a zdarma</h2>
+    </div>
+
+    <div class="container">
+        <h2>Jak to funguje?</h2>
+        <p>Platforma Smilosweb.app je určena na vytváření malých, bezdoménových webů zdarma</p>
+
+        <div class="services">
+            <div class="service">
+                <h3>Nemusíte nic dělat</h3>
+                <p>Programátor s pomocí AI udělá celý web za vás!</p>
+            </div>
+            <div class="service">
+                <h3>Zdarma</h3>
+                <p>Naše služba je zcela zdarma a nevyžaduje žádné skryté poplatky.</p>
+            </div>
+            <div class="service">
+                <h3>Doména</h3>
+                <p>Základní doména je smilosweb.netlify.app/vasweb nebo smwb.netlify.app/vasweb, pokud chcete vlastní doménu/subdoménu, využijte prosím ofiko.eu</p>
+            </div>
+        </div>
+
+        <div class="contact">
+            <h2>Kontaktujte nás</h2>
+            <p>Pro více informací nás kontaktujte na: <a href="mailto:smilos@m.ofiko.eu">smilos@m.ofiko.eu</a></p>
+            <br>
+            <br> <h2>Pro vytvoření webu klikněte <a href="https://smilosweb.netlify.app/vytvorit.html">zde</a></h2>.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 SmilosWeb.app. Všechna práva vyhrazena.</p>
+    </footer>
+    <link rel="icon" type="image/x-icon" href="/images/icon.ico">
+</body>
+</html>
