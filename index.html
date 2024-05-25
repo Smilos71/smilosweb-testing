@@ -6,6 +6,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smilosweb.app</title>
     
+Skvěle, že jste kód vložil do index.html. Pokud chat stále nefunguje, můžeme se podívat na několik dalších detailů a kroků pro diagnostiku problému.
+
+1. Ověření správnosti vloženého kódu
+Ujistěte se, že jste správně zkopírovali a vložili kód poskytnutý Drift do sekce <head> nebo těsně před uzavírací tag </body> vaší HTML stránky. Drift kód by měl vypadat nějak takto:
+
+html
+Zkopírovat kód
+<script>
+  "use strict";
+
+  !function() {
+    var t = window.driftt = window.drift = window.driftt || [];
+    if (!t.init) {
+      if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));
+      t.invoked = !0, t.methods = ["identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on"], 
+      t.factory = function(e) {
+        return function() {
+          var n = Array.prototype.slice.call(arguments);
+          return n.unshift(e), t.push(n), t;
+        };
+      }, t.methods.forEach(function(e) {
+        t[e] = t.factory(e);
+      }), t.load = function(t) {
+        var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document.createElement("script");
+        o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js";
+        var i = document.getElementsByTagName("script")[0];
+        i.parentNode.insertBefore(o, i);
+      };
+    }
+  }();
+  drift.SNIPPET_VERSION = '0.3.1';
+  drift.load('YOUR_APP_ID');
+</script>
+Poznámka: Nezapomeňte nahradit YOUR_APP_ID skutečným ID vašeho Drift účtu.
+
+2. Ověření správného načtení kódu
+Po vložení kódu zkontrolujte, zda je skript správně načten:
+
+Otevřete vývojářské nástroje: V prohlížeči otevřete nástroje pro vývojáře (Ctrl+Shift+I nebo F12).
+Přejděte na záložku "Network": Zkontrolujte, zda se načítá skript z Drift (mělo by to být něco jako drift-XXXXX.js).
+Zkontrolujte záložku "Console": Podívejte se, zda neobsahuje nějaké chyby související s Drift.
+3. Testování na jednoduché HTML stránce
+Vytvořte jednoduchý HTML soubor a vložte do něj Drift kód, abyste zjistili, zda problém není specifický pro vaši webovou stránku:
+
+html
+Zkopírovat kód
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Drift</title>
+</head>
+<body>
+    <h1>Test Drift</h1>
+
+    <script>
+      "use strict";
+
+      !function() {
+        var t = window.driftt = window.drift = window.driftt || [];
+        if (!t.init) {
+          if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));
+          t.invoked = !0, t.methods = ["identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on"], 
+          t.factory = function(e) {
+            return function() {
+              var n = Array.prototype.slice.call(arguments);
+              return n.unshift(e), t.push(n), t;
+            };
+          }, t.methods.forEach(function(e) {
+            t[e] = t.factory(e);
+          }), t.load = function(t) {
+            var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document.createElement("script");
+            o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js";
+            var i = document.getElementsByTagName("script")[0];
+            i.parentNode.insertBefore(o, i);
+          };
+        }
+      }();
+      drift.SNIPPET_VERSION = '0.3.1';
+      drift.load('dkgtge9vmmda');
+    </script>
+</body>
+</html>
     <style>
         body {
             font-family: Arial, sans-serif;
