@@ -1,0 +1,19 @@
+<!-- create_form.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vytvořit formulář</title>
+</head>
+<body>
+    <h1>Vytvořit formulář</h1>
+    <form action="{{ url_for('create_form') }}" method="POST">
+        <label for="title">Název formuláře:</label>
+        <input type="text" id="title" name="title" required><br><br>
+        <label for="questions">Otázky:</label><br>
+        <textarea id="questions" name="questions" rows="4" cols="50" required></textarea><br><br>
+        <input type="submit" value="Vytvořit">
+    </form>
+</body>
+</html>
