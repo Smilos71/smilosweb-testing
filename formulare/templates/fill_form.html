@@ -1,0 +1,19 @@
+<!-- fill_form.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vyplnit formulář</title>
+</head>
+<body>
+    <h1>{{ form[1] }}</h1>
+    <form action="{{ url_for('fill_form', form_id=form[0]) }}" method="POST">
+        {% for question in form[2].split('\n') %}
+            <label for="response">{{ question }}:</label><br>
+            <input type="text" id="response" name="response" required><br><br>
+        {% endfor %}
+        <input type="submit" value="Odeslat">
+    </form>
+</body>
+</html>
